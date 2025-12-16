@@ -1,0 +1,59 @@
+// scss/_variables.scss
+
+// Colors
+$color-primary: #709a08;
+$color-primary-light: #bbe002;
+$color-dark: #070d0b;
+$color-dark-bg: #134023;
+$color-white: #ffffff;
+$color-gray-light: #e8e8e8;
+$color-gray-medium: #eaeaea;
+$color-text: #070d0b;
+$color-text-secondary: rgba(7, 13, 11, 0.7);
+$color-border: #070d0b;
+
+// Typography
+$font-primary: "Mesveda-Regular", Helvetica, sans-serif;
+$font-bold: "Mesveda-Bold", Helvetica, sans-serif;
+$font-black: "Mesveda-Black", Helvetica, sans-serif;
+$font-italic: "Mesveda-Italic", Helvetica, sans-serif;
+$font-black-italic: "Mesveda-BlackItalic", Helvetica, sans-serif;
+$font-secondary: "Montserrat", Helvetica, sans-serif;
+
+// Font Sizes (using clamp for fluid typography)
+$font-size-base: 1rem; // 16px
+$font-size-small: 0.75rem; // 12px
+$font-size-medium: 0.875rem; // 14px
+$font-size-large: 1.25rem; // 20px
+$font-size-xl: clamp(3rem, 5vw, 5.25rem); // 48px - 84px
+$font-size-2xl: clamp(6rem, 10vw, 12.25rem); // 96px - 196px
+
+// Spacing
+$spacing-xs: 0.5rem; // 8px
+$spacing-sm: 1rem; // 16px
+$spacing-md: 1.5rem; // 24px
+$spacing-lg: 2.5rem; // 40px
+$spacing-xl: 5rem; // 80px
+$spacing-2xl: 8.125rem; // 130px
+
+// Container
+$container-max-width: 90rem; // 1440px
+$container-padding: clamp(1rem, 5vw, 6rem); // 16px - 96px
+
+// Border Radius
+$radius-small: 1.25rem; // 20px
+$radius-medium: 2.5rem; // 40px
+
+// Breakpoints
+$breakpoint-mobile: 20rem; // 320px
+$breakpoint-tablet: 48rem; // 768px
+$breakpoint-desktop: 90rem; // 1440px
+
+// Z-index
+$z-header: 100;
+$z-burger: 101;
+$z-overlay: 99;
+
+// Transitions
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;

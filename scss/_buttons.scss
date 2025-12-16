@@ -1,0 +1,63 @@
+// scss/_buttons.scss
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  padding: $spacing-xs $spacing-md;
+  font-family: $font-bold;
+  font-size: $font-size-small;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: $radius-medium;
+  transition: transform $transition-base, box-shadow $transition-base;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 1;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &--primary {
+    background-color: $color-primary-light;
+    color: rgba(17, 38, 26, 1);
+
+    &:hover {
+      background-color: lighten($color-primary-light, 5%);
+    }
+  }
+
+  &--secondary {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &:hover {
+      background-color: darken($color-primary, 5%);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 2px solid $color-primary-light;
+    color: $color-primary-light;
+
+    &:hover {
+      background-color: $color-primary-light;
+      color: $color-dark;
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: $spacing-xs $spacing-sm;
+    font-size: 0.625rem;
+  }
+}

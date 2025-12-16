@@ -1,0 +1,239 @@
+// scss/main.scss
+// Main SCSS file importing all partials
+
+// Import custom fonts (Mesveda family would need to be added via @font-face or link)
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+// Variables
+@import 'variables';
+
+// Base styles
+@import 'base';
+
+// Components
+@import 'buttons';
+@import 'header';
+@import 'hero';
+@import 'clarity';
+@import 'testimonials';
+@import 'footer';
+
+// Animations
+@import 'animations';
+
+// Additional sections and utilities
+
+.section {
+  padding: clamp(4rem, 10vh, 8rem) 0;
+
+  &--dark {
+    background-color: $color-dark-bg;
+    color: $color-white;
+  }
+
+  &--gray {
+    background-color: $color-gray-medium;
+  }
+
+  &--no-padding-top {
+    padding-top: 0;
+  }
+
+  &--no-padding-bottom {
+    padding-bottom: 0;
+  }
+}
+
+// Stats section
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-md;
+  padding: clamp(2rem, 5vh, 4rem) 0;
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-sm;
+
+    @media (max-width: $breakpoint-tablet) {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  &__number {
+    font-family: $font-black;
+    font-size: 4rem;
+    font-weight: 900;
+    color: $color-primary-light;
+    line-height: 1;
+  }
+
+  &__label {
+    font-family: $font-primary;
+    font-size: $font-size-medium;
+    color: $color-gray-light;
+  }
+
+  &__divider {
+    width: 1px;
+    height: 8.625rem;
+    background-color: rgba(232, 232, 232, 0.3);
+
+    @media (max-width: $breakpoint-tablet) {
+      display: none;
+    }
+  }
+}
+
+// FAQ section
+.faq {
+  padding: clamp(4rem, 10vh, 8rem) 0;
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__eyebrow {
+    font-family: $font-black-italic;
+    font-size: $font-size-small;
+    font-weight: 900;
+    font-style: italic;
+    color: $color-primary-light;
+    letter-spacing: 0.05em;
+    margin-bottom: $spacing-md;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    max-width: 45rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  &__item {
+    background-color: $color-primary-light;
+    border-radius: $radius-small;
+    overflow: hidden;
+    transition: background-color $transition-base;
+  }
+
+  &__question {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    padding: $spacing-md $spacing-lg;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: background-color $transition-base;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &__number {
+    font-family: $font-primary;
+    font-size: 1.25rem;
+    color: $color-dark;
+    min-width: 3rem;
+  }
+
+  &__question-text {
+    flex: 1;
+    font-family: $font-italic;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: $color-dark;
+    line-height: 1.7;
+  }
+
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: transform $transition-base;
+
+    &.is-active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $transition-slow, padding $transition-slow;
+    padding: 0 $spacing-lg;
+
+    &.is-active {
+      max-height: 30rem;
+      padding: 0 $spacing-lg $spacing-md;
+    }
+  }
+
+  &__answer-text {
+    font-family: $font-primary;
+    font-size: $font-size-medium;
+    line-height: 1.7;
+    color: $color-text-secondary;
+  }
+}
+
+// Pricing card
+.pricing {
+  &__card {
+    border-radius: $radius-small;
+    overflow: hidden;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.19) 100%
+      ),
+      url('../assets/images/envato-labs-image-edit-1.png') center center / cover;
+    height: 49rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: $spacing-lg $spacing-lg;
+    text-align: center;
+  }
+
+  &__eyebrow {
+    font-family: $font-black-italic;
+    font-size: $font-size-small;
+    font-weight: 900;
+    font-style: italic;
+    color: $color-primary;
+    letter-spacing: 0.05em;
+    margin-bottom: $spacing-sm;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    font-family: $font-black-italic;
+    font-size: 4rem;
+    font-weight: 900;
+    font-style: italic;
+    color: $color-primary;
+    line-height: 1.5;
+  }
+}
