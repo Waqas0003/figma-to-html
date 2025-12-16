@@ -1,0 +1,18 @@
+{
+  "name": "zeit-fur-klarheit",
+  "version": "1.0.0",
+  "description": "Professional consulting website with semantic HTML5 and SCSS",
+  "scripts": {
+    "sass": "sass scss/main.scss css/style.css --no-source-map",
+    "sass:watch": "sass --watch scss/main.scss:css/style.css --no-source-map",
+    "dev": "npm run sass:watch"
+  },
+  "keywords": [
+    "html",
+    "scss",
+    "responsive",
+    "bem"
+  ],
+  "author": "",
+  "license": "ISC"
+}

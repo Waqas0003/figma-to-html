@@ -1,0 +1,276 @@
+// scss/_testimonials.scss
+
+.testimonials {
+  padding: clamp(4rem, 10vh, 8rem) 0;
+  background-color: $color-white;
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__eyebrow {
+    font-family: $font-black-italic;
+    font-size: $font-size-small;
+    font-weight: 900;
+    font-style: italic;
+    color: $color-primary-light;
+    letter-spacing: 0.05em;
+    margin-bottom: $spacing-md;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-size-xl;
+    line-height: 1.1;
+    margin-bottom: $spacing-sm;
+    text-align: center;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: clamp(2rem, 8vw, 3.5rem);
+    }
+
+    .highlight {
+      color: $color-gray-light;
+    }
+
+    .highlight-primary {
+      font-family: $font-black-italic;
+      color: $color-primary-light;
+      font-style: italic;
+    }
+  }
+
+  &__description {
+    font-family: $font-primary;
+    font-size: $font-size-medium;
+    line-height: 1.7;
+    color: $color-text-secondary;
+    text-align: center;
+    max-width: 50rem;
+    margin: 0 auto $spacing-xl;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr));
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__card-image {
+    position: relative;
+    width: 100%;
+    height: 32.375rem;
+    border-radius: $radius-small;
+    overflow: hidden;
+    border: 3px solid $color-primary-light;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.1) 100%
+      ),
+      url('../assets/images/envato-labs-image-edit-1.png') center center / cover;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(7, 13, 11, 0) 0%,
+        rgba(7, 13, 11, 1) 93%
+      );
+      border-radius: $radius-small;
+      z-index: 1;
+    }
+  }
+
+  &__card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: $spacing-md $spacing-sm;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__card-features {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    width: 7.5rem;
+    align-items: center;
+    text-align: center;
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    span {
+      font-family: $font-primary;
+      font-size: $font-size-small;
+      color: $color-white;
+      line-height: 1.7;
+    }
+  }
+
+  &__card-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24%;
+    height: auto;
+    z-index: 2;
+    cursor: pointer;
+    transition: transform $transition-base;
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+
+  &__card-content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  &__quote {
+    font-family: $font-primary;
+    font-size: $font-size-medium;
+    line-height: 1.7;
+    color: $color-white;
+  }
+
+  &__author {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+
+  &__author-name {
+    font-family: $font-bold;
+    font-size: $font-size-medium;
+    font-weight: 700;
+    color: $color-white;
+  }
+
+  &__author-title {
+    font-family: $font-primary;
+    font-size: $font-size-medium;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-top: $spacing-md;
+
+    button {
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform $transition-base;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__cta {
+    text-align: center;
+    margin-top: $spacing-lg;
+  }
+
+  // Main testimonial section variant
+  &--main {
+    background: url('../assets/images/union-1.svg') center center / cover;
+    color: $color-white;
+
+    .testimonials__eyebrow {
+      color: $color-gray-light;
+    }
+
+    .testimonials__title {
+      color: $color-white;
+    }
+
+    .testimonials__description {
+      color: rgba(232, 232, 232, 0.7);
+    }
+  }
+
+  // Alternate testimonial layout
+  &__single {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-2xl;
+    align-items: center;
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+  }
+
+  &__single-content {
+    @media (max-width: $breakpoint-tablet) {
+      text-align: center;
+    }
+  }
+
+  &__quote-mark {
+    width: 7.375rem;
+    height: auto;
+    margin-bottom: $spacing-md;
+  }
+
+  &__single-quote {
+    font-family: $font-primary;
+    font-size: $font-size-medium;
+    line-height: 1.7;
+    color: $color-text-secondary;
+    margin-bottom: $spacing-md;
+  }
+}
